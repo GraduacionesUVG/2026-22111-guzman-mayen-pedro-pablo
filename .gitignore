@@ -1,0 +1,26 @@
+# Datos de estudiantes
+src/Datos/*
+!src/Datos/README.md
+
+# Variables de entorno locales
+.env
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+*.pensamiento/
+.pensamiento/
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Gradio
+.gradio/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

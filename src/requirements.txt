@@ -1,0 +1,29 @@
+# Dependencias del proyecto (Python 3.10.12)
+
+# Lectura de datos
+pyreadr==0.5.9          # lectura de los archivos .RData originales
+openpyxl==3.1.5         # lectura de "Actividades Pensamiento.xlsx"
+
+# Manipulación y análisis
+pandas==2.3.3
+numpy==2.2.6
+scipy==1.15.3           # pruebas Mann-Whitney, chi-cuadrado, Kruskal-Wallis
+statsmodels==0.15.0     # VIF (multicolinealidad)
+
+# Visualización
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# Modelado
+scikit-learn==1.7.2
+lightgbm==4.7.0
+xgboost==3.2.0
+optuna==5.0.0           # búsqueda de hiperparámetros
+joblib==1.6.0           # carga de modelos en la app
+
+# Aplicación web
+gradio==6.31.0
+spaces==0.51.3          # solo necesario si se despliega en Hugging Face Spaces
+
+# Notebooks
+ipykernel==7.3.0
