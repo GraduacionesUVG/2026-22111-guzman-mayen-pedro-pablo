@@ -206,7 +206,34 @@ Ejecuta los notebooks en el orden de la tabla de [Flujo de trabajo](#flujo-de-tr
 
 ## Capturas
 
-Las capturas se tomaron con la aplicación ejecutándose sobre los datos del conjunto de prueba (los `Est_ID` son identificadores anonimizados).
+Las capturas se tomaron con la aplicación ejecutándose sobre los datos del conjunto de prueba (`registro_prueba_herramienta.csv` y `notas_prueba_herramienta.csv`, 349 estudiantes). Los `Est_ID` son identificadores anonimizados.
+
+### Uso de la aplicación
+
+| | |
+|---|---|
+| ![Pantalla inicial](capturas/captura-01.png) | **1. Pantalla inicial.** Pestaña *Predicción* con el selector de mes, las dos áreas para cargar los archivos CSV y el mensaje *"Sube tus datos para obtener predicciones"*, que se muestra mientras no hay resultados. |
+| ![Archivos cargados](capturas/captura-06.png) | **6. Archivos cargados.** Se eligió el mes de febrero y se subieron el archivo de información general (`registro_prueba_herramienta.csv`) y el de actividades (`notas_prueba_herramienta.csv`), justo antes de presionar *Predecir*. |
+| ![Resultados de febrero](capturas/captura-07.png) | **7. Resultados con información hasta febrero.** Al predecir, el mensaje inicial se reemplaza por la tabla de resultados: cada estudiante con su probabilidad de reprobar y la clasificación *En riesgo* / *Fuera de riesgo*, ordenados de mayor a menor riesgo. |
+| ![Final de la tabla](capturas/captura-08.png) | **8. Final de la tabla de resultados.** Estudiantes con probabilidad cercana a 0, clasificados *Fuera de riesgo*, y el botón *Exportar resultados (CSV)*, que aparece después de predecir. |
+| ![Exportar resultados](capturas/captura-09.png) | **9. Exportación de resultados.** Al presionar *Exportar resultados (CSV)* el navegador descarga el archivo `riesgo_<mes>_<id>.csv`. |
+| ![CSV en Excel](capturas/captura-10.png) | **10. Archivo exportado.** El CSV abierto en Excel con las columnas `Est_ID`, `Probabilidad de reprobar` y `Predicción`, listo para compartir con el personal docente. |
+
+### Instrucciones dentro de la aplicación
+
+| | |
+|---|---|
+| ![Instrucciones de uso](capturas/captura-02.png) | **2. Cómo usar la herramienta.** Pestaña *Instrucciones* con los cinco pasos de uso y las reglas del selector de mes: solo se usan actividades hasta el mes elegido y para mayo se usa el modelo de abril. |
+| ![Formato información general](capturas/captura-03.png) | **3. Formato del archivo de información general.** Columnas obligatorias (`Est_ID`, `Anio`, `PAA`, `Colegio`, `TituloNivelMedio`, `veces_curso`) con su tipo, descripción y ejemplo. |
+| ![Formato actividades](capturas/captura-04.png) | **4. Formato del archivo de actividades.** Columnas obligatorias, reglas para las fechas y nombres exactos que deben tener los exámenes (`PARCIAL 1` … `PARCIAL 4`, `EXAMEN FINAL`). |
+| ![Descripción del resultado](capturas/captura-05.png) | **5. Descripción del resultado.** Significado de cada columna de la tabla de resultados y criterio del umbral, que prioriza detectar a los estudiantes en riesgo. |
+
+### Resultados de los modelos
+
+| | |
+|---|---|
+| ![Resultados de clasificación](capturas/captura-11.png) | **11. Comparación de los modelos de clasificación.** Umbral de decisión, sensibilidad, precisión, F2 y PR-AUC de la clase *reprobado* en el conjunto de prueba, para los cinco algoritmos y los cuatro meses. La aplicación usa Random Forest. |
+| ![Resultados de regresión](capturas/captura-12.png) | **12. Modelos de regresión de la nota final.** RMSE, MAE y correlación ponderados para los cinco algoritmos y los cuatro meses. |
 
 ## Demostración y documentos
 
