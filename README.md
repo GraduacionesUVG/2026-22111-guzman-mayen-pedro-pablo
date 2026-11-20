@@ -71,6 +71,9 @@ La aplicación usa **Random Forest**. Desempeño en el conjunto de prueba (349 e
 │       │   └── figuras/          #    Todas las figuras del análisis exploratorio
 │       ├── modelos/              # 4. Entrenamiento, resultados y gráficas
 │       └── app/                  # 5. Aplicación web (Gradio) y modelos finales
+│           └── data/
+│               ├── generar_datos_sinteticos.py   # Genera datos ficticios para probar la app
+│               └── ejemplo/                      # Datos ficticios listos para usar
 └── README.md
 ```
 
@@ -102,11 +105,11 @@ Cada notebook empieza con una tabla de entradas/salidas y un **resumen de las de
 | 4b | [`exploratorio/exploratorio.ipynb`](src/scripts/exploratorio/exploratorio.ipynb) | Figuras descriptivas complementarias para el informe. |
 | 5 | [`modelos/modelos.ipynb`](src/scripts/modelos/modelos.ipynb) | Entrena y evalúa 5 algoritmos por mes con Optuna (clasificación y regresión). |
 | 6 | [`modelos/graficas_resultados.ipynb`](src/scripts/modelos/graficas_resultados.ipynb) | Gráficas comparativas e importancia de variables. |
-| 7 | [`app/data/generacion_prueba.ipynb`](src/scripts/app/data/generacion_prueba.ipynb) | Genera los CSV de prueba para la aplicación a partir del conjunto de prueba. |
+| 7 | [`app/data/generacion_prueba.ipynb`](src/scripts/app/data/generacion_prueba.ipynb) | Filtra los datos reales limpios para quedarse con los estudiantes del conjunto de prueba y genera los CSV de entrada de la aplicación. Requiere los datos originales. |
 
 ## Datos
 
-Los datos **no se incluyen** en el repositorio porque contienen registros académicos de estudiantes. En [`src/Datos/README.md`](src/Datos/README.md) se describen los archivos necesarios, su contenido y dónde colocarlos para reproducir el proyecto. Los resultados ya calculados (métricas, importancias, figuras y modelos entrenados) sí están incluidos, por lo que la aplicación se puede ejecutar sin volver a entrenar. Para obtener los datos originales, contactarse con Lynette García Pérez, asesora del proyecto, al siguiente correo electrónico (lgarciap@uvg.edu.gt)
+Los datos **no se incluyen** en el repositorio porque contienen registros académicos de estudiantes. En [`src/Datos/README.md`](src/Datos/README.md) se describen los archivos necesarios, su contenido y dónde colocarlos para reproducir el proyecto. Los resultados ya calculados (métricas, importancias, figuras y modelos entrenados) sí están incluidos, por lo que la aplicación se puede ejecutar sin volver a entrenar, y se puede probar con los [datos ficticios de ejemplo](#probar-la-aplicación-sin-los-datos-originales). Para obtener los datos originales, contactarse con Lynette García Pérez, asesora del proyecto, al siguiente correo electrónico (lgarciap@uvg.edu.gt)
 
 ## Instalación
 
@@ -160,7 +163,28 @@ Abre `http://127.0.0.1:7860` en el navegador y:
 4. Presiona **Predecir**. Se muestra cada estudiante con su probabilidad de reprobar y la clasificación *En riesgo* / *Fuera de riesgo*, ordenados de mayor a menor riesgo.
 5. Descarga los resultados con **Exportar resultados (CSV)**.
 
-Para probarla se pueden usar los archivos `registro_prueba_herramienta.csv` y `notas_prueba_herramienta.csv` que genera `generacion_prueba.ipynb`.
+#### Probar la aplicación sin los datos originales
+
+Como los datos reales son confidenciales, el repositorio incluye **datos ficticios** listos para subir a la aplicación:
+
+| Archivo | Contenido |
+|---|---|
+| [`src/scripts/app/data/ejemplo/registro_sintetico.csv`](src/scripts/app/data/ejemplo/registro_sintetico.csv) | Información general de 60 estudiantes ficticios |
+| [`src/scripts/app/data/ejemplo/actividades_sinteticas.csv`](src/scripts/app/data/ejemplo/actividades_sinteticas.csv) | 1,440 actividades de esos estudiantes, de enero a mayo |
+
+> **Importante:** estos datos se generan al azar y no corresponden a ningún estudiante real. Sirven solo para ver la herramienta funcionando; **las predicciones que se obtienen con ellos no tienen ningún significado**.
+
+Se generaron con [`generar_datos_sinteticos.py`](src/scripts/app/data/generar_datos_sinteticos.py), que simula un semestre de 2026 con 20 actividades de 2 puntos y 4 parciales de 15 puntos (100 puntos en total). Cada estudiante tiene una habilidad aleatoria de la que dependen su PAA, sus notas, las entregas faltantes y las entregas tardías, para que los resultados sean variados. Para generar otro conjunto:
+
+```bash
+cd scripts/app/data
+```
+
+```bash
+python generar_datos_sinteticos.py --estudiantes 100 --semilla 7
+```
+
+Con los datos originales también se puede probar la aplicación con los estudiantes reales del conjunto de prueba, usando `registro_prueba_herramienta.csv` y `notas_prueba_herramienta.csv`, que genera `generacion_prueba.ipynb`.
 
 #### Formato de los archivos de entrada
 
