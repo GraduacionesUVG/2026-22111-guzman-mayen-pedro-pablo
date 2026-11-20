@@ -106,7 +106,7 @@ Cada notebook empieza con una tabla de entradas/salidas y un **resumen de las de
 
 ## Datos
 
-Los datos **no se incluyen** en el repositorio porque contienen registros académicos de estudiantes. En [`src/Datos/README.md`](src/Datos/README.md) se describen los archivos necesarios, su contenido y dónde colocarlos para reproducir el proyecto. Los resultados ya calculados (métricas, importancias, figuras y modelos entrenados) sí están incluidos, por lo que la aplicación se puede ejecutar sin volver a entrenar. Para obtener los datos originales, contactarse con Lynette García Pérez, asesora del proyecto, al siguiente correo electrónicco (lgarciap@uvg.edu.gt)
+Los datos **no se incluyen** en el repositorio porque contienen registros académicos de estudiantes. En [`src/Datos/README.md`](src/Datos/README.md) se describen los archivos necesarios, su contenido y dónde colocarlos para reproducir el proyecto. Los resultados ya calculados (métricas, importancias, figuras y modelos entrenados) sí están incluidos, por lo que la aplicación se puede ejecutar sin volver a entrenar. Para obtener los datos originales, contactarse con Lynette García Pérez, asesora del proyecto, al siguiente correo electrónico (lgarciap@uvg.edu.gt)
 
 ## Instalación
 
