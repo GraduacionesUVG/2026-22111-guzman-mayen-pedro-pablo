@@ -1,0 +1,9 @@
+variable,importancia,importancia_norm,tipo_importancia
+porcentaje_acum_actividades_mes_4,2.4485964693123994,0.37705826871367054,abs_coef
+nota_examen_mes_4,1.602803909603097,0.24681505295650308,abs_coef
+veces_curso,1.1282752395838098,0.17374259654529303,abs_coef
+nota_examen_mes_3,0.7804065796662996,0.12017445810675541,abs_coef
+nota_examen_mes_2,0.5042281266543194,0.07764586237699037,abs_coef
+TituloNivelMedio,0.02963682469029416,0.004563761300787519,abs_coef
+PAA,0.0,0.0,abs_coef
+Colegio,0.0,0.0,abs_coef

@@ -1,0 +1,9 @@
+variable,importancia,importancia_norm,tipo_importancia
+porcentaje_acum_actividades_mes_4,0.8476330746747848,0.847633074674785,impurity
+nota_examen_mes_4,0.14899070760348507,0.1489907076034851,impurity
+nota_examen_mes_3,0.0019208771072848922,0.0019208771072848926,impurity
+nota_examen_mes_2,0.0014553406144451227,0.0014553406144451229,impurity
+veces_curso,0.0,0.0,impurity
+TituloNivelMedio,0.0,0.0,impurity
+Colegio,0.0,0.0,impurity
+PAA,0.0,0.0,impurity
